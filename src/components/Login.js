@@ -19,30 +19,35 @@ const Login = ({ setToken, navigate }) => {
     }
   };
   return (
-      
-    <form className="login"
+    <form
+      className="login"
       onSubmit={(event) => {
         event.preventDefault();
         handleSubmit();
       }}
     >
-        <h1>Log In</h1>
-      <TextField style={{margin: ".25rem"}}
+      <h1>Log In</h1>
+      <TextField
+        style={{ margin: ".25rem" }}
         label="Enter Username"
-     
         onChange={(event) => setUsername(event.target.value)}
       />
-      <TextField style={{margin: ".25rem"}}
-     
+      <TextField
+        style={{ margin: ".25rem" }}
         label="Enter Password"
         onChange={(event) => setPassword(event.target.value)}
       />
-      <Button style={{ height: "3rem", margin: ".25rem" }} variant="contained" type="submit">
-       Log In
+      <Button
+        style={{ height: "3rem", margin: ".25rem" }}
+        variant="contained"
+        type="submit"
+      >
+        Log In
       </Button>
-     <Link style={{textDecoration: 'none'}} to="/register">Don't have an account? Sign Up</Link>
+      <Link style={{ textDecoration: "none" }} to="/register">
+        Don't have an account? Sign Up
+      </Link>
     </form>
-   
   );
 };
 export default Login;

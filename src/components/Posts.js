@@ -18,30 +18,29 @@ const Posts = ({ posts, token }) => {
   const postsToDisplay = searchTerm.length ? filteredPosts : posts;
   return (
     <div className="main-div">
-     
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-          }}
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+        }}
+      >
+        <TextField
+          style={{ margin: ".5rem", width: "60rem" }}
+          label="Search Posts"
+          onChange={(event) => setSearchTerm(event.target.value)}
+        ></TextField>
+      </form>
+      {token ? (
+        <Button
+          style={{ height: "2.5rem", margin: ".5rem" }}
+          variant="outlined"
+          type="submit"
         >
-          <TextField
-            style={{ margin: ".5rem", width: "71rem" }}
-            label="Search Posts"
-            onChange={(event) => setSearchTerm(event.target.value)}
-          ></TextField>
-        </form>
-        {token ? (
-          <Button
-            style={{ height: "2.5rem", margin: ".5rem" }}
-            variant="outlined"
-            type="submit"
-          >
-            <Link style={{ textDecoration: "none" }} to="/posts/create-post">
-              Create Post
-            </Link>
-          </Button>
-        ) : null}
-      
+          <Link style={{ textDecoration: "none" }} to="/posts/create-post">
+            Create Post
+          </Link>
+        </Button>
+      ) : null}
+
       {postsToDisplay.map((post) => {
         const { description, location, price, title, _id, isAuthor } = post;
         return (

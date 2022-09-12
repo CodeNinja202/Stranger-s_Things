@@ -9,7 +9,6 @@ const SendMessage = ({ postID, token, navigate }) => {
     await createMessage({ postID, message, token });
   }
   return (
-   
     <form
       onSubmit={(ev) => {
         ev.preventDefault();
@@ -22,7 +21,10 @@ const SendMessage = ({ postID, token, navigate }) => {
         placeholder="Enter Message"
         onChange={(ev) => setMessage({ content: ev.target.value })}
       />
-      <Button Button variant="outlined" href="#outlined-buttons"
+      <Button
+        Button
+        variant="outlined"
+        href="#outlined-buttons"
         type="submit"
         onClick={() => {
           addMessage();
@@ -50,51 +52,58 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
       isAuthor,
     } = currentPost;
     return (
-      
-      <div className='main_div'>
-         <Paper style={{ padding: "20px", margin: "20px" }} elevation={5}>
-        <div>
-          <h3>{title}</h3>
-          <p>Description: {description}</p>
-          <p>Price: {price}</p>
-          <p>Location: {location}</p>
-          <p>Will Deliver: {willDeliver}</p>
-        </div>
-        {isAuthor ? (
-          <>
-            <Link to={`/posts`}>
-              <button>View All</button>
-            </Link>
-            <Link to={`/posts`}>
-              <button onClick={() => deletePost(token, postID)}>Delete</button>
-            </Link>
-          </>
-        ) : (
-          <>
-            <Link style={{textDecoration: 'none'}} to={`/posts`}>
-              <Button variant="outlined" href="#outlined-buttons">View All</Button>
-            </Link>
-            {token && (
-              <>
-                <Button onClick={()  => setActiveMessage(!activeMessage)} variant="outlined" href="#outlined-buttons">
-                  Message Seller
+      <div className="main_div">
+        <Paper style={{ padding: "20px", margin: "20px" }} elevation={5}>
+          <div>
+            <h3>{title}</h3>
+            <p>Description: {description}</p>
+            <p>Price: {price}</p>
+            <p>Location: {location}</p>
+            <p>Will Deliver: {willDeliver}</p>
+          </div>
+          {isAuthor ? (
+            <>
+              <Link to={`/posts`}>
+                <button>View All</button>
+              </Link>
+              <Link to={`/posts`}>
+                <button onClick={() => deletePost(token, postID)}>
+                  Delete
+                </button>
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link style={{ textDecoration: "none" }} to={`/posts`}>
+                <Button variant="outlined" href="#outlined-buttons">
+                  View All
                 </Button>
-                {activeMessage && (
-                  <SendMessage
-                    token={token}
-                    postID={postID}
-                    navigate={navigate}
-                    getMe={getMe}
-                  />
-                )}
-              </>
-            )}
-          </>
-        )}
-        <div>
-          <p className="singlePostStamp">Created At: {createdAt}</p>
-          <p className="singlePostStamp">Updated At: {updatedAt}</p>
-        </div>
+              </Link>
+              {token && (
+                <>
+                  <Button
+                    onClick={() => setActiveMessage(!activeMessage)}
+                    variant="outlined"
+                    href="#outlined-buttons"
+                  >
+                    Message Seller
+                  </Button>
+                  {activeMessage && (
+                    <SendMessage
+                      token={token}
+                      postID={postID}
+                      navigate={navigate}
+                      getMe={getMe}
+                    />
+                  )}
+                </>
+              )}
+            </>
+          )}
+          <div>
+            <p className="singlePostStamp">Created At: {createdAt}</p>
+            <p className="singlePostStamp">Updated At: {updatedAt}</p>
+          </div>
         </Paper>
       </div>
     );

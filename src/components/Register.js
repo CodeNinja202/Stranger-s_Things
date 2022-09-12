@@ -20,26 +20,31 @@ const Register = ({ setToken, navigate }) => {
   };
 
   return (
-    
-    <form className="login"
-   
+    <form
+      className="login"
       onSubmit={(event) => {
         event.preventDefault();
         handleSubmit();
       }}
     >
       <h1>Create Account</h1>
-      <TextField style={{margin: ".25rem"}}
+      <TextField
+        style={{ margin: ".25rem" }}
         label="Register Username"
         onChange={(event) => setUsername(event.target.value)}
       />
-      <TextField style={{margin: ".25rem"}}
+      <TextField
+        style={{ margin: ".25rem" }}
         label="Register Password"
         onChange={(event) => setPassword(event.target.value)}
       />
-      <Button 
-       style={{height: '3rem', margin: ".25rem"}}
-      variant="contained" type="submit">Sign Up</Button>
+      <Button
+        style={{ height: "3rem", margin: ".25rem" }}
+        variant="contained"
+        type="submit"
+      >
+        Sign Up
+      </Button>
     </form>
   );
 };
