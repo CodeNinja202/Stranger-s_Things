@@ -1,24 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Paper from "@mui/material/Paper";
-import { Grid } from '@mui/material';
+import { Button } from '@mui/material';
 const Navbar = ({ logout, token }) => {
   return (
     
-    <Paper elevation={3}>
+    <Paper  elevation={5}>
     <header>
       <nav className='navBar'>
         <h1>Stranger's Things</h1>
-        <Link to='/'>Home</Link>
-        <Link to='/posts'>Posts</Link>
+        <Button>
+        <Link style={{textDecoration: 'none'}} to='/'>Home</Link>
+        </Button>
+        <Button>
+        <Link style={{textDecoration: 'none'}} to='/posts'>Posts</Link>
+        </Button>
         {
           token ? (
             <>
-              <Link to='/profile'>Profile</Link>
-              <Link to='/' onClick={() => logout()}>Logout</Link>
+             <Button>
+              <Link style={{textDecoration: 'none'}} to='/profile'>Profile</Link>
+              </Button>
+              <Button>
+              <Link style={{textDecoration: 'none'}} to='/' onClick={() => logout()}>Logout</Link>
+              </Button>
             </>
           ) : (
-            <Link to='/login'>Login</Link>
+            <Button>
+            <Link style={{textDecoration: 'none'}} to='/login'>Login</Link>
+            </Button>
           )
         }
       </nav>

@@ -8,11 +8,11 @@ const Profile = ({ user }) => {
   
   return (
     
-    <div className="main-div">
+    <div className="main_div">
       <div className='message-div'>
-      
-        <h1>Messages from other users!</h1>
-        <Paper>
+      <Paper elevation={5}>
+        <h1>Received Messages:</h1>
+        </Paper>
         {
           messages && messages.map(message => {
             const fromUserID = message.fromUser._id;
@@ -21,29 +21,35 @@ const Profile = ({ user }) => {
             
             if (userID !== fromUserID) {
               return (
+                <Paper style={{ padding: "20px", margin: "20px" }} elevation={5}>
                 <div key={message._id}>
                   <p>From User: {username} </p>
                   <p>Message: {message.content}</p>
                   <p>Post Reference: {title}</p>
                 </div>
+                </Paper>
               )
             }
           })    
-        }</Paper>
+        }
       </div>
       <div>
-        <h1>Messages from You!</h1>
+      <Paper  elevation={5}>
+        <h1>Sent Messages:</h1>
+        </Paper>
         {
           messages && messages.map(message => {
             const fromUserID = message.fromUser._id;
             
             if (userID === fromUserID) {
-              return (
+              return (<Paper style={{ padding: "20px", margin: "20px" }} elevation={5}>
                 <div key={message._id}>{message.content}</div>
+                </Paper>
               )
             }
           })    
         }
+       
       </div>
     </div>
     

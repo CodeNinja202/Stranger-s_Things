@@ -20,7 +20,7 @@ const Login = ({ setToken, navigate }) => {
   };
   return (
       
-    <form className="mainPg"
+    <form className="login"
       onSubmit={(event) => {
         event.preventDefault();
         handleSubmit();
@@ -40,7 +40,7 @@ const Login = ({ setToken, navigate }) => {
       <Button style={{ height: "3rem", margin: ".25rem" }} variant="contained" type="submit">
        Log In
       </Button>
-     <Link to="/register">Don't have an account? Sign Up</Link>
+     <Link style={{textDecoration: 'none'}} to="/register">Don't have an account? Sign Up</Link>
     </form>
    
   );

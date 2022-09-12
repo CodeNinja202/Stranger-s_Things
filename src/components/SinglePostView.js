@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { createMessage, deletePost } from "../api";
+import Paper from "@mui/material/Paper";
+import { Button, TextField } from "@mui/material";
 const SendMessage = ({ postID, token, navigate }) => {
   const [message, setMessage] = useState({ content: "" });
   async function addMessage() {
     await createMessage({ postID, message, token });
   }
   return (
+   
     <form
       onSubmit={(ev) => {
         ev.preventDefault();
@@ -14,20 +17,20 @@ const SendMessage = ({ postID, token, navigate }) => {
         navigate("/post");
       }}
     >
-      <input
+      <TextField
         type="text"
         placeholder="Enter Message"
         onChange={(ev) => setMessage({ content: ev.target.value })}
       />
-      <button
+      <Button Button variant="outlined" href="#outlined-buttons"
         type="submit"
         onClick={() => {
           addMessage();
           navigate("/posts");
         }}
       >
-        SendMessage
-      </button>
+        Send Message
+      </Button>
     </form>
   );
 };
@@ -47,7 +50,9 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
       isAuthor,
     } = currentPost;
     return (
-      <div>
+      
+      <div className='main_div'>
+         <Paper style={{ padding: "20px", margin: "20px" }} elevation={5}>
         <div>
           <h3>{title}</h3>
           <p>Description: {description}</p>
@@ -66,14 +71,14 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
           </>
         ) : (
           <>
-            <Link to={`/posts`}>
-              <button>View All</button>
+            <Link style={{textDecoration: 'none'}} to={`/posts`}>
+              <Button variant="outlined" href="#outlined-buttons">View All</Button>
             </Link>
             {token && (
               <>
-                <button onClick={() => setActiveMessage(!activeMessage)}>
-                  Message this user
-                </button>
+                <Button onClick={()  => setActiveMessage(!activeMessage)} variant="outlined" href="#outlined-buttons">
+                  Message Seller
+                </Button>
                 {activeMessage && (
                   <SendMessage
                     token={token}
@@ -90,6 +95,7 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
           <p className="singlePostStamp">Created At: {createdAt}</p>
           <p className="singlePostStamp">Updated At: {updatedAt}</p>
         </div>
+        </Paper>
       </div>
     );
   } else {

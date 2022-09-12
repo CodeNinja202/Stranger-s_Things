@@ -21,7 +21,7 @@ const Register = ({ setToken, navigate }) => {
 
   return (
     
-    <form className="mainPg"
+    <form className="login"
    
       onSubmit={(event) => {
         event.preventDefault();

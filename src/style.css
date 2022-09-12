@@ -1,31 +1,36 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+*{
+    box-sizing: inherit;
+}
 
 
 .navBar {
-    border-radius: .5rem;
+ 
     display: flex;
     justify-content: space-around;
+
+  
+  
+    
 }
 
-.mainPg {
+.login {
 
     display: flex;
     flex-direction: column;
 
-    height: auto;
+    
     margin: 4rem;
-    padding-top: 25%;
+    padding-top: 20%;
 
 
 }
 
 
-
-.searchBar {
-    display: flex;
-    justify-content: center;
+.main-div{
+display: flex;
+flex-direction: column;
+align-content: center;
+justify-content: space-around;
 }
+
+
