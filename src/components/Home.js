@@ -1,11 +1,11 @@
-import { Typography } from "@mui/material";
+
+
 import React from "react";
+import logoIMG from './images/home_page.png';
 
 const Home = () => {
   return (
-    <Typography variant="h1" component="h2">
-      <h1>Welcome to Stranger's Things!</h1>
-    </Typography>
+    <img  src={logoIMG } style={{width:'100%'}}/>
   );
 };
 

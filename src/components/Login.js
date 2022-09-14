@@ -20,7 +20,7 @@ const Login = ({ setToken, navigate }) => {
   };
   return (
     <form
-      className="login"
+      className="loginTemplate"
       onSubmit={(event) => {
         event.preventDefault();
         handleSubmit();

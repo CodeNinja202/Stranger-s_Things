@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Paper from "@mui/material/Paper";
-import { Button } from "@mui/material";
+import { Button, Paper  } from "@mui/material";
+import navPIC from './images/navBar.jpeg'
+
 const Navbar = ({ logout, token }) => {
   return (
     <Paper elevation={5}>
       <header>
         <nav className="navBar">
-          <h1>Stranger's Things</h1>
-          <Button>
+          <img src={navPIC}/>
+          <Button >
             <Link style={{ textDecoration: "none" }} to="/">
               Home
             </Link>

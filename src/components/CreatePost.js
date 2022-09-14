@@ -27,7 +27,7 @@ const Createpost = ({ token, fetchPosts, navigate }) => {
           addPost();
         }}
       >
-        <div className="login">
+        <div className="loginTemplate">
           <h1>Create A New Post</h1>
           <TextField
             type="text"

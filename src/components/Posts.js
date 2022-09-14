@@ -24,7 +24,7 @@ const Posts = ({ posts, token }) => {
         }}
       >
         <TextField
-          style={{ margin: ".5rem", width: "60rem" }}
+          style={{ margin: ".8rem", width:'100%'}}
           label="Search Posts"
           onChange={(event) => setSearchTerm(event.target.value)}
         ></TextField>

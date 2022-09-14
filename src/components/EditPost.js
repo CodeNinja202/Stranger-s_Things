@@ -42,9 +42,10 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
           window.location - "/posts";
         }}
       >
-        <div className="login">
+        <div className="loginTemplate">
           <h1>Edit Post</h1>
-          <input
+          <input 
+          
             class="createPost"
             type="text"
             placeholder={title}
@@ -75,15 +76,20 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
             checked={newwillDeliver}
             onChange={(event) => setNewWillDeliver(event.target.checked)}
           />
-          <button type="submit">Edit Post</button>
-          <button
+          <Button
             type="submit"
+           
+            variant="outlined">Edit Post</Button>
+          <Button
+            type="submit"
+           
+            variant="outlined"
             onClick={() => {
               deletePost(token, postID);
             }}
           >
             Delete
-          </button>
+          </Button>
         </div>
       </form>
     </Paper>

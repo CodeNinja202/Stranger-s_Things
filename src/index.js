@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
+
 import CssBaseline from "@mui/material/CssBaseline";
 import { Route, BrowserRouter, Routes, useNavigate } from "react-router-dom";
 import { Container } from "@mui/material";
@@ -67,8 +68,8 @@ const App = () => {
         <nav>
           <Navbar logout={logout} token={token} />
           <Routes>
-            <Route path="/" element={<Home />} />
-
+            <Route path="/" element={<Home /> }  />
+           
             <Route
               path="/posts"
               element={<Posts posts={posts} token={token} />}

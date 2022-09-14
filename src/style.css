@@ -11,11 +11,9 @@
     justify-content: space-around;
 
 
-
-
 }
 
-.login {
+.loginTemplate{
 
     display: flex;
     flex-direction: column;
