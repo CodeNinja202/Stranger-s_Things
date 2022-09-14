@@ -1,58 +1,98 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Paper  } from "@mui/material";
-import navPIC from './images/navBar.jpeg'
+import { Button, Paper } from "@mui/material";
+import navPIC from "./images/navBar.jpeg";
+
+
 
 const Navbar = ({ logout, token }) => {
   return (
-    <Paper elevation={5}>
+    <Paper elevation={5} style={{ width: "100%" }}>
       <header>
         <nav className="navBar">
-          <img src={navPIC}/>
-          
-            <Link style={{ textDecoration: "none" }} to="/">
-            <Button >
+          <img src={navPIC} />
+
+          <Link style={{ textDecoration: "none" }} to="/">
+            <Button
+                           style={{
+                            marginTop:"25%",
+                            borderColor:'black',
+                            width:"5rem",
+                            borderRadius: 35,
+                            backgroundColor: "orange",
+                            color: "black",
+                          }} variant="outlined"
+            >
               Home
-              </Button>
-            </Link>
-          
-          
-            <Link style={{ textDecoration: "none" }} to="/posts">
-            <Button>
+            </Button>
+          </Link>
+
+          <Link style={{ textDecoration: "none" }} to="/posts">
+            <Button
+              style={{
+                marginTop:"25%",
+                borderColor:'black',
+                width:"5rem",
+                borderRadius: 35,
+                backgroundColor: "orange",
+                color: "black",
+              }} variant="outlined"
+            >
               Posts
-              </Button>
-            </Link>
-          
+            </Button>
+          </Link>
+
           {token ? (
             <>
-              
-                <Link style={{ textDecoration: "none" }} to="/profile">
-                <Button>
-                  Profile
-                  </Button>
-                </Link>
-              
-              
-                <Link
-                  style={{ textDecoration: "none" }}
-                  to="/"
-                  onClick={() => logout()}
+              <Link style={{ textDecoration: "none" }} to="/profile">
+                <Button
+                               style={{
+                                marginTop:"25%",
+                                borderColor:'black',
+                                width:"5rem",
+                                borderRadius: 35,
+                                backgroundColor: "orange",
+                                color: "black",
+                              }} variant="outlined"
                 >
-                  <Button>
-                  Logout
-                  </Button>
-                </Link>
-              
-            </>
-          ) : (
-           
-            
-            <Link style={{ textDecoration: "none" }} to="/login">
-                <Button>
-                Login
+                  Profile
                 </Button>
               </Link>
-          
+
+              <Link
+                style={{ textDecoration: "none" }}
+                to="/"
+                onClick={() => logout()}
+              >
+                <Button
+                               style={{
+                                marginTop:"25%",
+                                borderColor:'black',
+                                width:"5rem",
+                                borderRadius: 35,
+                                backgroundColor: "orange",
+                                color: "black",
+                              }} variant="outlined"
+                >
+                  Logout
+                </Button>
+              </Link>
+            </>
+          ) : (
+            <Link style={{ textDecoration: "none" }} to="/login">
+              <Button
+                            style={{
+                              marginTop:"25%",
+                              borderColor:'black',
+                              width:"5rem",
+                              borderRadius: 35,
+                              backgroundColor: "orange",
+                              color: "black",
+                            }} variant="outlined"
+              >
+                Login
+              </Button>
+            </Link>
           )}
         </nav>
       </header>

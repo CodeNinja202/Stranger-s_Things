@@ -60,7 +60,12 @@ const Createpost = ({ token, fetchPosts, navigate }) => {
                 event.preventDefault();
                 addPost();
               }}
-            > <Button variant="outlined" href="#outlined-buttons">
+            > <Button style={{
+              width:'100%',
+              borderRadius: 35,
+              backgroundColor: "black",
+              color: "orange",
+            }} variant="outlined" href="#outlined-buttons">
               Submit Post
               </Button>
             </Link>
