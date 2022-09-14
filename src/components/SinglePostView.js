@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { createMessage, deletePost } from "../api";
 import Paper from "@mui/material/Paper";
-import { Button, TextField } from "@mui/material";
+
+
+import { Button, TextField} from "@mui/material";
 const SendMessage = ({ postID, token, navigate }) => {
   const [message, setMessage] = useState({ content: "" });
   async function addMessage() {
@@ -22,7 +24,7 @@ const SendMessage = ({ postID, token, navigate }) => {
         onChange={(ev) => setMessage({ content: ev.target.value })}
       />
       <Button
-        Button
+       
         variant="outlined"
         href="#outlined-buttons"
         type="submit"
@@ -81,7 +83,7 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
               </Link>
               {token && (
                 <>
-                  <Button
+                  <Button 
                     onClick={() => setActiveMessage(!activeMessage)}
                     variant="outlined"
                     href="#outlined-buttons"

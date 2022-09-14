@@ -9,39 +9,50 @@ const Navbar = ({ logout, token }) => {
       <header>
         <nav className="navBar">
           <img src={navPIC}/>
-          <Button >
+          
             <Link style={{ textDecoration: "none" }} to="/">
+            <Button >
               Home
+              </Button>
             </Link>
-          </Button>
-          <Button>
+          
+          
             <Link style={{ textDecoration: "none" }} to="/posts">
+            <Button>
               Posts
+              </Button>
             </Link>
-          </Button>
+          
           {token ? (
             <>
-              <Button>
+              
                 <Link style={{ textDecoration: "none" }} to="/profile">
+                <Button>
                   Profile
+                  </Button>
                 </Link>
-              </Button>
-              <Button>
+              
+              
                 <Link
                   style={{ textDecoration: "none" }}
                   to="/"
                   onClick={() => logout()}
                 >
+                  <Button>
                   Logout
+                  </Button>
                 </Link>
-              </Button>
+              
             </>
           ) : (
-            <Button>
-              <Link style={{ textDecoration: "none" }} to="/login">
+           
+            
+            <Link style={{ textDecoration: "none" }} to="/login">
+                <Button>
                 Login
+                </Button>
               </Link>
-            </Button>
+          
           )}
         </nav>
       </header>

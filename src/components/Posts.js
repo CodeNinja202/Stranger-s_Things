@@ -30,15 +30,17 @@ const Posts = ({ posts, token }) => {
         ></TextField>
       </form>
       {token ? (
-        <Button
-          style={{ height: "2.5rem", margin: ".5rem" }}
+        
+          <Link style={{ textDecoration: "none" }} to="/posts/create-post">
+           <Button
+          style={{ width:"100%", height: "2.5rem", margin: ".5rem" }}
           variant="outlined"
           type="submit"
         >
-          <Link style={{ textDecoration: "none" }} to="/posts/create-post">
             Create Post
+            </Button>
           </Link>
-        </Button>
+        
       ) : null}
 
       {postsToDisplay.map((post) => {
@@ -52,25 +54,28 @@ const Posts = ({ posts, token }) => {
               <p>Location: {location}</p>
               {isAuthor ? (
                 <div>
-                  <Button variant="outlined" href="#outlined-buttons">
+                
                     <Link
                       style={{ textDecoration: "none" }}
                       to={`/posts/edit-post/${_id}`}
                     >
+  <Button variant="outlined" href="#outlined-buttons">
                       Edit
+                      </Button>
                     </Link>
-                  </Button>
+                  
                 </div>
               ) : (
                 <div>
-                  <Button variant="outlined" href="#outlined-buttons">
+                
                     <Link
                       style={{ textDecoration: "none" }}
                       to={`/posts/${_id}`}
-                    >
+                    >  <Button variant="outlined" href="#outlined-buttons">
                       View
+                      </Button>
                     </Link>
-                  </Button>
+                  
                 </div>
               )}
             </div>

@@ -82,7 +82,7 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
             variant="outlined">Edit Post</Button>
           <Button
             type="submit"
-           
+            color="error"
             variant="outlined"
             onClick={() => {
               deletePost(token, postID);

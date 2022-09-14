@@ -53,17 +53,18 @@ const Createpost = ({ token, fetchPosts, navigate }) => {
             value={location}
             onChange={(event) => setLocation(event.target.value)}
           />
-          <Button variant="outlined" href="#outlined-buttons">
+         
             <Link
               style={{ textDecoration: "none" }}
               onClick={(event) => {
                 event.preventDefault();
                 addPost();
               }}
-            >
+            > <Button variant="outlined" href="#outlined-buttons">
               Submit Post
+              </Button>
             </Link>
-          </Button>
+         
         </div>
 
         <label>Will Deliver</label>
