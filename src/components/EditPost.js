@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { updatePost, deletePost, getPosts } from "../api";
 import { useParams } from "react-router-dom";
 import { Paper, TextField, Button, Link } from "@mui/material";
-
+import logoIMG from "./images/creatPostPIC.png";
 const EditPost = ({ posts, token, fetchPosts, navigate }) => {
   const { postID } = useParams();
 
@@ -33,7 +33,8 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
   return (
     // This needs to be a form that accepts the 5 request parameters for creating a post
     <Paper elevation={5}>
-      <form class="form"
+      <form
+        class="form"
         onSubmit={(event) => {
           event.preventDefault();
           editPost();
@@ -42,60 +43,72 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
         }}
       >
         <div className="loginTemplate">
+          <img src={logoIMG} style={{ width: "100%" }} />
           <h1>Edit Post</h1>
           <TextField
-          
-            class="createPost"
+           
             type="text"
             placeholder={title}
             onChange={(event) => setNewTitle(event.target.value)}
           />
-          <input
-            class="createPost"
+          <TextField
+           
             id="description"
             type="text"
             placeholder={description}
             onChange={(event) => setNewDescription(event.target.value)}
           />
-          <input
-            class="createPost"
+          <TextField
+            
             type="text"
             placeholder={price}
             onChange={(event) => setNewPrice(event.target.value)}
           />
-          <input
-            class="createPost"
+         <TextField
+           
             type="text"
             placeholder={location}
             onChange={(event) => setNewLocation(event.target.value)}
           />
-          <input
-            class="createPost"
-            type="checkbox"
-            checked={newwillDeliver}
-            onChange={(event) => setNewWillDeliver(event.target.checked)}
-          />
-            </div>
-          <Button
-            type="submit"
-           
-            variant="outlined">Edit Post</Button>
-          <Button
-            type="submit"
-            color="error"
-            variant="outlined"
-            onClick={() => {
-              deletePost(token, postID);
-            }}
-          >
-            Delete
-          </Button>
-       <input
-            class="createPost"
-            type="checkbox"
-            checked={newwillDeliver}
-            onChange={(event) => setNewWillDeliver(event.target.checked)}
-          />
+        
+        <Button  style={{
+                marginTop: "2%",
+                width: "100%",
+                borderRadius: 35,
+                background: "black",
+                opacity: "70%",
+                color: "orange",
+                borderColor: "black",
+              }} type="submit" variant="outlined">
+          Edit Post
+        </Button>
+        <Button  style={{
+                marginTop: "2%",
+                width: "100%",
+                borderRadius: 35,
+                background: "black",
+                opacity: "70%",
+                color: "red",
+                borderColor: "black",
+              }}
+          type="submit"
+          color="error"
+          variant="outlined"
+          onClick={() => {
+            deletePost(token, postID);
+          }}
+        >
+          Delete
+        </Button>
+        </div>
+        <label>Will Deliver</label>
+        <input
+          class="createPost"
+          type="checkbox"
+          checked={newwillDeliver}
+          onChange={(event) => setNewWillDeliver(event.target.checked)}
+        />
+       
       </form>
     </Paper>
   );
