@@ -71,6 +71,8 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
             onChange={(event) => setNewLocation(event.target.value)}
           />
         
+      
+       
         <Button  style={{
                 marginTop: "2%",
                 width: "100%",
@@ -83,7 +85,8 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
           Edit Post
         </Button>
         <Button  style={{
-                marginTop: "2%",
+                 marginBottom:'2%',
+                 marginTop: "2%",
                 width: "100%",
                 borderRadius: 35,
                 background: "black",
@@ -101,13 +104,7 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
           Delete
         </Button>
         </div>
-        <label>Will Deliver</label>
-        <input
-          class="createPost"
-          type="checkbox"
-          checked={newwillDeliver}
-          onChange={(event) => setNewWillDeliver(event.target.checked)}
-        />
+        
        
       </form>
     </Paper>

@@ -59,7 +59,7 @@ const Posts = ({ posts, token }) => {
               <p>Description: {description}</p>
               <p>Price: {price}</p>
               <p>Location: {location}</p>
-              <p>Will Deliver:{willDeliver}</p>
+            
               {isAuthor ? (
                 <div>
                   <Link

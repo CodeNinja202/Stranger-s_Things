@@ -9,9 +9,9 @@ const Profile = ({ user }) => {
   return (
     <div className="main_div">
       <div className="message-div">
-        <Paper elevation={5}>
-          <h1>Received Messages:</h1>
-        </Paper>
+       
+          <h1 style={{textAlign:"center", color: "orange", opacity: "70%",backgroundColor:'black', borderRadius:32}}>Received Messages:</h1>
+      
         {messages &&
           messages.map((message) => {
             const fromUserID = message.fromUser._id;
@@ -21,7 +21,7 @@ const Profile = ({ user }) => {
             if (userID !== fromUserID) {
               return (
                 <Paper
-                  style={{ padding: "20px", margin: "20px" }}
+                  style={{ opacity: "65%", backgroundColor:'orange', padding: "20px", margin: "20px" }}
                   elevation={5}
                 >
                   <div key={message._id}>
@@ -35,9 +35,7 @@ const Profile = ({ user }) => {
           })}
       </div>
       <div>
-        <Paper elevation={5}>
-          <h1>Sent Messages:</h1>
-        </Paper>
+      <h1 style={{textAlign:"center", color: "orange", opacity: "70%",backgroundColor:'black', borderRadius:32}}>Sent Messages:</h1>
         {messages &&
           messages.map((message) => {
             const fromUserID = message.fromUser._id;
@@ -45,7 +43,7 @@ const Profile = ({ user }) => {
             if (userID === fromUserID) {
               return (
                 <Paper
-                  style={{ padding: "20px", margin: "20px" }}
+                  style={{color: "white",  opacity: "50%",backgroundColor:'black', padding: "20px", margin: "20px" }}
                   elevation={5}
                 >
                   <div key={message._id}>{message.content}</div>
