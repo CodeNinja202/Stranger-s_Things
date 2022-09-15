@@ -62,35 +62,47 @@ const Posts = ({ posts, token }) => {
               <p>Will Deliver:{willDeliver}</p>
               {isAuthor ? (
                 <div>
-                
-                    <Link
-                      style={{ textDecoration: "none" }}
-                      to={`/posts/edit-post/${_id}`}
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/posts/edit-post/${_id}`}
+                  >
+                    <Button
+                      style={{
+                        opacity: "70%",
+                        marginTop: "5%",
+                        borderColor: "black",
+                        width: "20%",
+                        borderRadius: 35,
+                        backgroundColor: "black",
+                        color: "orange",
+                      }}
+                      variant="outlined"
+                      href="#outlined-buttons"
                     >
-  <Button variant="outlined" href="#outlined-buttons">
                       Edit
-                      </Button>
-                    </Link>
-                  
+                    </Button>
+                  </Link>
                 </div>
               ) : (
                 <div>
-                
-                    <Link
-                      style={{ textDecoration: "none" }}
-                      to={`/posts/${_id}`}
-                    >  <Button  style={{
-                      marginTop: "5%",
-                      borderColor: "black",
-                      width: "20%",
-                      borderRadius: 35,
-                      backgroundColor: "orange",
-                      color: "black",
-                    }} variant="outlined" href="#outlined-buttons">
+                  <Link style={{ textDecoration: "none" }} to={`/posts/${_id}`}>
+                    {" "}
+                    <Button
+                   
+                      style={{
+                        marginTop: "5%",
+                        borderColor: "black",
+                        width: "20%",
+                        borderRadius: 35,
+                        backgroundColor: "orange",
+                        color: "black",
+                      }}
+                      variant="outlined"
+                      href="#outlined-buttons"
+                    >
                       View
-                      </Button>
-                    </Link>
-                  
+                    </Button>
+                  </Link>
                 </div>
               )}
             </div>

@@ -87,7 +87,7 @@ const Navbar = ({ logout, token }) => {
             <Link style={{ textDecoration: "none" }} to="/login">
               <Button
                 style={{
-                  marginTop: "28%",
+                  marginTop: "20%",
                   borderColor: "black",
                   width: "15rem",
                   borderRadius: 35,

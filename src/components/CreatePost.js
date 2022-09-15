@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { createPost } from "../api";
 import { Paper, TextField, Button, Link } from "@mui/material";
+import logoIMG from "./images/creatPostPIC.png";
+
 const Createpost = ({ token, fetchPosts, navigate }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -28,6 +30,7 @@ const Createpost = ({ token, fetchPosts, navigate }) => {
         }}
       >
         <div className="loginTemplate">
+          <img src={logoIMG} style={{ width: "100%" }} />
           <h1>Create A New Post</h1>
           <TextField
             type="text"
@@ -53,25 +56,31 @@ const Createpost = ({ token, fetchPosts, navigate }) => {
             value={location}
             onChange={(event) => setLocation(event.target.value)}
           />
-         
-            <Link
-              style={{ textDecoration: "none" }}
-              onClick={(event) => {
-                event.preventDefault();
-                addPost();
+
+          <Link
+            style={{ textDecoration: "none" }}
+            onClick={(event) => {
+              event.preventDefault();
+              addPost();
+            }}
+          >
+            
+            <Button
+              style={{
+                marginTop: "2%",
+                width: "100%",
+                borderRadius: 35,
+                background: "black",
+                opacity: "70%",
+                color: "orange",
+                borderColor: "black",
               }}
-            > <Button style={{
-              width:'100%',
-              borderRadius: 35,
-              background:"black",
-              opacity:"50%",
-              color: "orange",
-              borderColor: "black",
-            }} variant="outlined" href="#outlined-buttons">
+              variant="outlined"
+              href="#outlined-buttons"
+            >
               Submit Post
-              </Button>
-            </Link>
-         
+            </Button>
+          </Link>
         </div>
 
         <label>Will Deliver</label>

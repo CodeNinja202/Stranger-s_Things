@@ -9,29 +9,27 @@
 
     display: flex;
     justify-content: space-around;
- flex-wrap: wrap;
+    flex-wrap: wrap;
 
 }
 
-.loginTemplate{
+.loginTemplate {
 
     display: flex;
     flex-direction: column;
 
 
-    margin: 4rem;
-    padding-top: 20%;
+    margin: 1rem;
+    padding-top: 2%;
 
 
 }
 
 
-.main_div {
-    margin-top: 10%;
-}
+
 
 .profile_div {
-   
+
     margin-top: 3rem;
     margin-right: 3rem;
 }

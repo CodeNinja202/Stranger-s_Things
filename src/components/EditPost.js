@@ -33,8 +33,7 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
   return (
     // This needs to be a form that accepts the 5 request parameters for creating a post
     <Paper elevation={5}>
-      <form
-        class="form"
+      <form class="form"
         onSubmit={(event) => {
           event.preventDefault();
           editPost();
@@ -44,7 +43,7 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
       >
         <div className="loginTemplate">
           <h1>Edit Post</h1>
-          <input 
+          <TextField
           
             class="createPost"
             type="text"
@@ -76,6 +75,7 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
             checked={newwillDeliver}
             onChange={(event) => setNewWillDeliver(event.target.checked)}
           />
+            </div>
           <Button
             type="submit"
            
@@ -90,7 +90,12 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
           >
             Delete
           </Button>
-        </div>
+       <input
+            class="createPost"
+            type="checkbox"
+            checked={newwillDeliver}
+            onChange={(event) => setNewWillDeliver(event.target.checked)}
+          />
       </form>
     </Paper>
   );

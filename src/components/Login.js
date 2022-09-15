@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { loginUser } from "../api";
 import { Button, TextField } from "@mui/material";
-
+import logoIMG from './images/login_signUP.png'
 import { Link } from "react-router-dom";
 import "./Register";
 const Login = ({ setToken, navigate }) => {
@@ -26,6 +26,8 @@ const Login = ({ setToken, navigate }) => {
         handleSubmit();
       }}
     >
+       <div className="loginTemplate">
+      <img src={logoIMG } />
       <h1>Log In</h1>
       <TextField
         style={{ margin: ".25rem" }}
@@ -38,7 +40,11 @@ const Login = ({ setToken, navigate }) => {
         onChange={(event) => setPassword(event.target.value)}
       />
       <Button
-        style={{ height: "3rem", margin: ".25rem" }}
+        style={{ borderRadius: 35,
+          background: "black",
+          opacity: "70%",
+          color: "orange",
+          borderColor: "black", height: "3rem", margin: ".25rem" }}
         variant="contained"
         type="submit"
       >
@@ -47,6 +53,7 @@ const Login = ({ setToken, navigate }) => {
       <Link style={{ textDecoration: "none" }} to="/register">
         Don't have an account? Sign Up
       </Link>
+      </div>
     </form>
   );
 };
