@@ -9,7 +9,7 @@
 
     display: flex;
     justify-content: space-around;
-   
+ flex-wrap: wrap;
 
 }
 
@@ -26,11 +26,8 @@
 }
 
 
-.main-div {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: space-around;
+.main_div {
+    margin-top: 10%;
 }
 
 .profile_div {

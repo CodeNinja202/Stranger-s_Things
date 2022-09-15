@@ -5,7 +5,9 @@ import logoIMG from './images/home_page.png';
 
 const Home = () => {
   return (
-    <img  src={logoIMG } style={{width:'100%'}}/>
+  
+    <img src={logoIMG } style={{width:'100%', marginTop:'10%'}}/>
+   
   );
 };
 

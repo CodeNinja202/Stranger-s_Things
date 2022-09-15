@@ -3,25 +3,27 @@ import { Link } from "react-router-dom";
 import { Button, Paper } from "@mui/material";
 import navPIC from "./images/navBar.jpeg";
 
-
-
 const Navbar = ({ logout, token }) => {
   return (
-    <Paper elevation={5} style={{ width: "100%" }}>
+   
       <header>
+           <img style={{width:"auto"}}  src={navPIC} />
         <nav className="navBar">
-          <img src={navPIC} />
-
+        
+        
+          
+      
           <Link style={{ textDecoration: "none" }} to="/">
             <Button
-                           style={{
-                            marginTop:"25%",
-                            borderColor:'black',
-                            width:"5rem",
-                            borderRadius: 35,
-                            backgroundColor: "orange",
-                            color: "black",
-                          }} variant="outlined"
+              style={{
+                marginTop:'20%',
+                borderColor: "black",
+                width: "15rem",
+                borderRadius: 35,
+                backgroundColor: "orange",
+                color: "black",
+              }}
+              variant="outlined"
             >
               Home
             </Button>
@@ -30,13 +32,14 @@ const Navbar = ({ logout, token }) => {
           <Link style={{ textDecoration: "none" }} to="/posts">
             <Button
               style={{
-                marginTop:"25%",
-                borderColor:'black',
-                width:"5rem",
+                marginTop:'20%',
+                borderColor: "black",
+                width: "15rem",
                 borderRadius: 35,
                 backgroundColor: "orange",
                 color: "black",
-              }} variant="outlined"
+              }}
+              variant="outlined"
             >
               Posts
             </Button>
@@ -46,14 +49,15 @@ const Navbar = ({ logout, token }) => {
             <>
               <Link style={{ textDecoration: "none" }} to="/profile">
                 <Button
-                               style={{
-                                marginTop:"25%",
-                                borderColor:'black',
-                                width:"5rem",
-                                borderRadius: 35,
-                                backgroundColor: "orange",
-                                color: "black",
-                              }} variant="outlined"
+                  style={{
+                    marginTop:'20%',
+                    borderColor: "black",
+                    width: "15rem",
+                    borderRadius: 35,
+                    backgroundColor: "orange",
+                    color: "black",
+                  }}
+                  variant="outlined"
                 >
                   Profile
                 </Button>
@@ -65,14 +69,15 @@ const Navbar = ({ logout, token }) => {
                 onClick={() => logout()}
               >
                 <Button
-                               style={{
-                                marginTop:"25%",
-                                borderColor:'black',
-                                width:"5rem",
-                                borderRadius: 35,
-                                backgroundColor: "orange",
-                                color: "black",
-                              }} variant="outlined"
+                  style={{
+                    marginTop:'20%',
+                    borderColor: "black",
+                    width: "15rem",
+                    borderRadius: 35,
+                    backgroundColor: "orange",
+                    color: "black",
+                  }}
+                  variant="outlined"
                 >
                   Logout
                 </Button>
@@ -81,22 +86,25 @@ const Navbar = ({ logout, token }) => {
           ) : (
             <Link style={{ textDecoration: "none" }} to="/login">
               <Button
-                            style={{
-                              marginTop:"25%",
-                              borderColor:'black',
-                              width:"5rem",
-                              borderRadius: 35,
-                              backgroundColor: "orange",
-                              color: "black",
-                            }} variant="outlined"
+                style={{
+                  marginTop: "28%",
+                  borderColor: "black",
+                  width: "15rem",
+                  borderRadius: 35,
+                  backgroundColor: "orange",
+                  color: "black",
+                }}
+                variant="outlined"
               >
                 Login
               </Button>
             </Link>
           )}
+         
         </nav>
+        
       </header>
-    </Paper>
+   
   );
 };
 

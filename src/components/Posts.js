@@ -33,7 +33,14 @@ const Posts = ({ posts, token }) => {
         
           <Link style={{ textDecoration: "none" }} to="/posts/create-post">
            <Button
-          style={{ width:"100%", height: "2.5rem", margin: ".5rem" }}
+          style={{ 
+            marginLeft:"12%",
+            borderRadius: 35,
+            background:"black",
+            opacity:"70%",
+            color: "orange",
+            borderColor: "black",
+            width:"75%", height: "2.5rem"}}
           variant="outlined"
           type="submit"
         >
@@ -44,7 +51,7 @@ const Posts = ({ posts, token }) => {
       ) : null}
 
       {postsToDisplay.map((post) => {
-        const { description, location, price, title, _id, isAuthor } = post;
+        const { willDeliver, description, location, price, title, _id, isAuthor } = post;
         return (
           <Paper style={{ padding: "20px", margin: "20px" }} elevation={5}>
             <div key={_id}>
@@ -52,6 +59,7 @@ const Posts = ({ posts, token }) => {
               <p>Description: {description}</p>
               <p>Price: {price}</p>
               <p>Location: {location}</p>
+              <p>Will Deliver:{willDeliver}</p>
               {isAuthor ? (
                 <div>
                 
@@ -71,7 +79,14 @@ const Posts = ({ posts, token }) => {
                     <Link
                       style={{ textDecoration: "none" }}
                       to={`/posts/${_id}`}
-                    >  <Button variant="outlined" href="#outlined-buttons">
+                    >  <Button  style={{
+                      marginTop: "5%",
+                      borderColor: "black",
+                      width: "20%",
+                      borderRadius: 35,
+                      backgroundColor: "orange",
+                      color: "black",
+                    }} variant="outlined" href="#outlined-buttons">
                       View
                       </Button>
                     </Link>

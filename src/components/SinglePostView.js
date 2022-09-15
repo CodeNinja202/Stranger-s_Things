@@ -3,8 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { createMessage, deletePost } from "../api";
 import Paper from "@mui/material/Paper";
 
-
-import { Button, TextField} from "@mui/material";
+import { Button, TextField } from "@mui/material";
 const SendMessage = ({ postID, token, navigate }) => {
   const [message, setMessage] = useState({ content: "" });
   async function addMessage() {
@@ -19,12 +18,28 @@ const SendMessage = ({ postID, token, navigate }) => {
       }}
     >
       <TextField
+        style={{
+         
+          marginTop: "5%",
+          borderColor: "black",
+          width: "100%",
+          
+         marginBottom:'3%',
+          color: "black",
+        }}
         type="text"
         placeholder="Enter Message"
         onChange={(ev) => setMessage({ content: ev.target.value })}
       />
       <Button
-       
+        style={{
+          opacity:"70%",
+          borderColor: "black",
+          width: "100%",
+          borderRadius: 35,
+          backgroundColor: "black",
+          color: "orange  ",
+        }}
         variant="outlined"
         href="#outlined-buttons"
         type="submit"
@@ -61,7 +76,7 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
             <p>Description: {description}</p>
             <p>Price: {price}</p>
             <p>Location: {location}</p>
-            <p>Will Deliver: {willDeliver}</p>
+           
           </div>
           {isAuthor ? (
             <>
@@ -77,19 +92,46 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
           ) : (
             <>
               <Link style={{ textDecoration: "none" }} to={`/posts`}>
-                <Button variant="outlined" href="#outlined-buttons">
+                <Button
+                  style={{
+                    borderColor: "black",
+                     margin:'2% 2% 2% 2%',
+                    borderRadius: 35,
+                    backgroundColor: "orange",
+                    color: "black",
+                  }}
+                  variant="outlined"
+                  href="#outlined-buttons"
+                >
                   View All
                 </Button>
               </Link>
+              
               {token && (
-                <>
-                  <Button 
+               
+
+              
+               <>
+
+            
+                  <Button
                     onClick={() => setActiveMessage(!activeMessage)}
+                    style={{
+                      borderColor: "black",
+
+                      borderRadius: 35,
+                      backgroundColor: "orange",
+                      color: "black",
+                    }}
                     variant="outlined"
                     href="#outlined-buttons"
                   >
                     Message Seller
                   </Button>
+                  <div>
+            <p className="singlePostStamp">Created At: {createdAt}</p>
+            <p className="singlePostStamp">Updated At: {updatedAt}</p>
+          </div>
                   {activeMessage && (
                     <SendMessage
                       token={token}
@@ -102,10 +144,7 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
               )}
             </>
           )}
-          <div>
-            <p className="singlePostStamp">Created At: {createdAt}</p>
-            <p className="singlePostStamp">Updated At: {updatedAt}</p>
-          </div>
+          
         </Paper>
       </div>
     );

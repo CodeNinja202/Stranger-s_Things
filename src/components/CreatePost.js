@@ -63,8 +63,10 @@ const Createpost = ({ token, fetchPosts, navigate }) => {
             > <Button style={{
               width:'100%',
               borderRadius: 35,
-              backgroundColor: "black",
+              background:"black",
+              opacity:"50%",
               color: "orange",
+              borderColor: "black",
             }} variant="outlined" href="#outlined-buttons">
               Submit Post
               </Button>
