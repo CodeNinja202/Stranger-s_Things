@@ -19,12 +19,11 @@ const SendMessage = ({ postID, token, navigate }) => {
     >
       <TextField
         style={{
-         
           marginTop: "5%",
           borderColor: "black",
           width: "100%",
-          
-         marginBottom:'3%',
+
+          marginBottom: "3%",
           color: "black",
         }}
         type="text"
@@ -33,7 +32,7 @@ const SendMessage = ({ postID, token, navigate }) => {
       />
       <Button
         style={{
-          opacity:"70%",
+          opacity: "70%",
           borderColor: "black",
           width: "100%",
           borderRadius: 35,
@@ -76,7 +75,6 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
             <p>Description: {description}</p>
             <p>Price: {price}</p>
             <p>Location: {location}</p>
-           
           </div>
           {isAuthor ? (
             <>
@@ -95,7 +93,7 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
                 <Button
                   style={{
                     borderColor: "black",
-                     margin:'2% 2% 2% 2%',
+                    margin: "2% 2% 2% 2%",
                     borderRadius: 35,
                     backgroundColor: "orange",
                     color: "black",
@@ -106,14 +104,9 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
                   View All
                 </Button>
               </Link>
-              
+
               {token && (
-               
-
-              
-               <>
-
-            
+                <>
                   <Button
                     onClick={() => setActiveMessage(!activeMessage)}
                     style={{
@@ -129,9 +122,9 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
                     Message Seller
                   </Button>
                   <div>
-            <p className="singlePostStamp">Created At: {createdAt}</p>
-            <p className="singlePostStamp">Updated At: {updatedAt}</p>
-          </div>
+                    <p className="singlePostStamp">Created At: {createdAt}</p>
+                    <p className="singlePostStamp">Updated At: {updatedAt}</p>
+                  </div>
                   {activeMessage && (
                     <SendMessage
                       token={token}
@@ -144,7 +137,6 @@ const SinglePostView = ({ posts, token, navigate, getMe }) => {
               )}
             </>
           )}
-          
         </Paper>
       </div>
     );

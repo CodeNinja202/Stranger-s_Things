@@ -68,8 +68,8 @@ const App = () => {
         <nav>
           <Navbar logout={logout} token={token} />
           <Routes>
-            <Route path="/" element={<Home /> }  />
-           
+            <Route path="/" element={<Home />} />
+
             <Route
               path="/posts"
               element={<Posts posts={posts} token={token} />}

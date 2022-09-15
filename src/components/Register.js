@@ -50,11 +50,15 @@ const Register = ({ setToken, navigate }) => {
         />
 
         <Button
-          style={{ borderRadius: 35,
+          style={{
+            borderRadius: 35,
             background: "black",
             opacity: "70%",
             color: "orange",
-            borderColor: "black", height: "3rem", margin: ".25rem" }}
+            borderColor: "black",
+            height: "3rem",
+            margin: ".25rem",
+          }}
           variant="contained"
           type="submit"
         >

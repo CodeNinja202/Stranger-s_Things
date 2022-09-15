@@ -46,66 +46,63 @@ const EditPost = ({ posts, token, fetchPosts, navigate }) => {
           <img src={logoIMG} style={{ width: "100%" }} />
           <h1>Edit Post</h1>
           <TextField
-           
             type="text"
             placeholder={title}
             onChange={(event) => setNewTitle(event.target.value)}
           />
           <TextField
-           
             id="description"
             type="text"
             placeholder={description}
             onChange={(event) => setNewDescription(event.target.value)}
           />
           <TextField
-            
             type="text"
             placeholder={price}
             onChange={(event) => setNewPrice(event.target.value)}
           />
-         <TextField
-           
+          <TextField
             type="text"
             placeholder={location}
             onChange={(event) => setNewLocation(event.target.value)}
           />
-        
-      
-       
-        <Button  style={{
-                marginTop: "2%",
-                width: "100%",
-                borderRadius: 35,
-                background: "black",
-                opacity: "70%",
-                color: "orange",
-                borderColor: "black",
-              }} type="submit" variant="outlined">
-          Edit Post
-        </Button>
-        <Button  style={{
-                 marginBottom:'2%',
-                 marginTop: "2%",
-                width: "100%",
-                borderRadius: 35,
-                background: "black",
-                opacity: "70%",
-                color: "red",
-                borderColor: "black",
-              }}
-          type="submit"
-          color="error"
-          variant="outlined"
-          onClick={() => {
-            deletePost(token, postID);
-          }}
-        >
-          Delete
-        </Button>
+
+          <Button
+            style={{
+              marginTop: "2%",
+              width: "100%",
+              borderRadius: 35,
+              background: "black",
+              opacity: "70%",
+              color: "orange",
+              borderColor: "black",
+            }}
+            type="submit"
+            variant="outlined"
+          >
+            Edit Post
+          </Button>
+          <Button
+            style={{
+              marginBottom: "2%",
+              marginTop: "2%",
+              width: "100%",
+              borderRadius: 35,
+              background: "black",
+              opacity: "70%",
+              color: "red",
+              borderColor: "black",
+            }}
+            type="submit"
+            color="error"
+            variant="outlined"
+            onClick={() => {
+              deletePost(token, postID);
+            }}
+          >
+            Delete
+          </Button>
         </div>
-        
-       
       </form>
     </Paper>
   );

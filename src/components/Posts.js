@@ -24,34 +24,42 @@ const Posts = ({ posts, token }) => {
         }}
       >
         <TextField
-          style={{ margin: ".8rem", width:'100%'}}
+          style={{ margin: ".8rem", width: "100%" }}
           label="Search Posts"
           onChange={(event) => setSearchTerm(event.target.value)}
         ></TextField>
       </form>
       {token ? (
-        
-          <Link style={{ textDecoration: "none" }} to="/posts/create-post">
-           <Button
-          style={{ 
-            marginLeft:"12%",
-            borderRadius: 35,
-            background:"black",
-            opacity:"70%",
-            color: "orange",
-            borderColor: "black",
-            width:"75%", height: "2.5rem"}}
-          variant="outlined"
-          type="submit"
-        >
+        <Link style={{ textDecoration: "none" }} to="/posts/create-post">
+          <Button
+            style={{
+              marginLeft: "12%",
+              borderRadius: 35,
+              background: "black",
+              opacity: "70%",
+              color: "orange",
+              borderColor: "black",
+              width: "75%",
+              height: "2.5rem",
+            }}
+            variant="outlined"
+            type="submit"
+          >
             Create Post
-            </Button>
-          </Link>
-        
+          </Button>
+        </Link>
       ) : null}
 
       {postsToDisplay.map((post) => {
-        const { willDeliver, description, location, price, title, _id, isAuthor } = post;
+        const {
+          willDeliver,
+          description,
+          location,
+          price,
+          title,
+          _id,
+          isAuthor,
+        } = post;
         return (
           <Paper style={{ padding: "20px", margin: "20px" }} elevation={5}>
             <div key={_id}>
@@ -59,7 +67,7 @@ const Posts = ({ posts, token }) => {
               <p>Description: {description}</p>
               <p>Price: {price}</p>
               <p>Location: {location}</p>
-            
+
               {isAuthor ? (
                 <div>
                   <Link
@@ -88,7 +96,6 @@ const Posts = ({ posts, token }) => {
                   <Link style={{ textDecoration: "none" }} to={`/posts/${_id}`}>
                     {" "}
                     <Button
-                   
                       style={{
                         marginTop: "5%",
                         borderColor: "black",
