@@ -64,13 +64,7 @@ const Createpost = ({ token, fetchPosts, navigate }) => {
               addPost();
             }}
           >
-            <label>Will Deliver</label>
-            <input
-              type="checkbox"
-              placeholder="Will Deliver*"
-              checked={willDeliver}
-              onChange={(event) => setWillDeliver(!willDeliver)}
-            />
+        
             <Button
               style={{
                 marginBottom: "2%",
@@ -89,6 +83,14 @@ const Createpost = ({ token, fetchPosts, navigate }) => {
             </Button>
           </Link>
         </div>
+
+        <label>Will Deliver</label>
+            <input
+              type="checkbox"
+              placeholder="Will Deliver*"
+              checked={willDeliver}
+              onChange={(event) => setWillDeliver(!willDeliver)}
+            />
       </form>
     </Paper>
   );
