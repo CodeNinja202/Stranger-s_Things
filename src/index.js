@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import { Route, BrowserRouter, Routes, useNavigate } from "react-router-dom";
-import { Container } from "@mui/material";
+import { Container, } from "@mui/material";
 import "./style.css";
 import {
   Navbar,

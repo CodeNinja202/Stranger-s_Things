@@ -94,7 +94,7 @@ const Posts = ({ posts, token }) => {
               ) : (
                 <div>
                   <Link style={{ textDecoration: "none" }} to={`/posts/${_id}`}>
-                    {" "}
+                   
                     <Button
                       style={{
                         marginTop: "5%",

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Paper } from "@mui/material";
+import { Button} from "@mui/material";
 import navPIC from "./images/navBar.jpeg";
 
 const Navbar = ({ logout, token }) => {

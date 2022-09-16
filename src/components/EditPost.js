@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { updatePost, deletePost, getPosts } from "../api";
+import { updatePost, deletePost } from "../api";
 import { useParams } from "react-router-dom";
 import { Paper, TextField, Button, Link } from "@mui/material";
 import logoIMG from "./images/editPicj.png"

@@ -11,6 +11,7 @@ const Profile = ({ user }) => {
       <div className="message-div">
         <h1
           style={{
+            marginTop:"2rem",
             textAlign: "center",
             color: "orange",
             opacity: "70%",
