@@ -79,7 +79,6 @@ export const getUserDetails = async (token) => {
   }
 }
 
-
 export const createPost = async (token, {title, description, price, location, willDeliver})=> {
   try {
     const response = await fetch(`${baseURL}/posts`, {
