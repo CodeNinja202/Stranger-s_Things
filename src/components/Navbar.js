@@ -78,22 +78,22 @@ const Navbar = ({ logout, token }) => {
               </Button>
             </Link>
           </>
-        ) : (
-          <Link style={{ textDecoration: "none" }} to="/login">
-            <Button
-              style={{
+          ) : (
+              <Link style={{ textDecoration: "none" }} to="/login">
+                <Button
+                style={{
                 marginTop: "20%",
                 borderColor: "black",
                 width: "15rem",
                 borderRadius: 35,
                 backgroundColor: "orange",
                 color: "black",
-              }}
-              variant="outlined"
-            >
-              Login
-            </Button>
-          </Link>
+                 }}
+                variant="outlined"
+                  >
+                   Login
+                     </Button>
+                        </Link>
         )}
       </nav>
     </header>
