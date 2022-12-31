@@ -6,6 +6,7 @@ import logoIMG from "./images/editPicj.png"
 const EditPost = ({ posts, token, fetchPosts, navigate }) => {
   const { postID } = useParams();
 
+  
   const [currentPost] = posts.filter((post) => post._id === postID);
 
   const { title, description, location, price, willDeliver } = currentPost;
